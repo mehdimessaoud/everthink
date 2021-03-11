@@ -10,7 +10,7 @@ const MyNotes=()=>{
 
 return(
     <div>
-       <h1>notedly</h1> 
+       <h1>Notedly</h1> 
        <p>These are my notes</p>
     </div>
 );
