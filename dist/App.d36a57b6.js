@@ -65279,7 +65279,7 @@ var MyNotes = function MyNotes() {
     //update the document title
     document.title = 'My notes - notedly';
   });
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "notedly"), _react.default.createElement("p", null, "These are my notes"));
+  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Notedly"), _react.default.createElement("p", null, "These are my notes"));
 };
 
 var _default = MyNotes;
@@ -67185,7 +67185,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "17368" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "14989" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
