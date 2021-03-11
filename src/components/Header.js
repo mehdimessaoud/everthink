@@ -48,7 +48,7 @@ const Header = props =>{
     return(
       <HeaderBar>
         <img src={logo} alt= "Notedly Logo" height="40" />
-        <LogoText>Notedly</LogoText>
+        <LogoText>Everthink</LogoText>
             <UserState>
                 {data.isLoggedIn ? (
                     <ButtonAsLink
