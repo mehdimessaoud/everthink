@@ -39,9 +39,7 @@ const NewNote = props=>{
     return (
         <React.Fragment>
             {loading && <p>Loading...</p>}
-            {error && <P> {error.graphQLErrors.map(({ message }, i) => (
-        <span   key={i}>{message}</span>
-      ))}</P>}
+            {error && <P> </P>}
             <NoteForm action={data}/>
             </React.Fragment>
     );

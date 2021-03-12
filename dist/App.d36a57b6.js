@@ -50426,7 +50426,12 @@ var Navigation = function Navigation() {
     role: "img"
   }, "\uD83C\uDF1F"), _react.default.createElement(_reactRouterDom.Link, {
     to: "/favorites"
-  }, "Favorites"))));
+  }, "Favorites")), _react.default.createElement("li", null, _react.default.createElement("span", {
+    "aria-hidden": "true",
+    role: "img"
+  }, "\uD83D\uDCDD"), _react.default.createElement(_reactRouterDom.Link, {
+    to: "/new"
+  }, "New Note"))));
 };
 
 var _default = Navigation;
@@ -65749,12 +65754,7 @@ var NewNote = function NewNote(props) {
       loading = _useMutation2$.loading,
       error = _useMutation2$.error;
 
-  return _react.default.createElement(_react.default.Fragment, null, loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement(P, null, " ", error.graphQLErrors.map(function (_ref, i) {
-    var message = _ref.message;
-    return _react.default.createElement("span", {
-      key: i
-    }, message);
-  })), _react.default.createElement(_NoteForm.default, {
+  return _react.default.createElement(_react.default.Fragment, null, loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement(P, null, " "), _react.default.createElement(_NoteForm.default, {
     action: data
   }));
 };
@@ -67341,7 +67341,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2083" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1259" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
