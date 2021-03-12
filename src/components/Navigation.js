@@ -5,19 +5,33 @@ import styled from 'styled-components';
 
 const Nav=styled.nav`
     padding: 1em;
-    background: #f5f4f0;
-    top:55px;
+    background: transparent;
+    top:100px;
+    left:30px;
     @media(max-width:700px){
-        padding-top: 94px;
+        padding-top: 54px;
     }
 
     @media(min-width:700px){
         
         position: fixed;
         width:220px;
-        height: 100%;
-        overflow-y: scroll;
+        height: 80%;
+         
     }
+    border:none;
+   border-left:1px solid rgba( 255, 255, 255, 0.3 );
+    border-top:1px solid rgba( 255, 255, 255, 0.3 );
+    -webkit-backdrop-filter:blur(5px);
+    backdrop-filter:blur(15px);
+    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);
+    color: #fff;
+    font-weight: 500;
+    font-family:'Montserrat', sans-serif;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    border-radius:20px;
 `;
 
 const NavList=styled.ul`

@@ -50350,7 +50350,7 @@ var IS_LOGGED_IN = (0, _client.gql)(_templateObject || (_templateObject = _tagge
 
 var UserState = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin-left: auto;\n"])));
 
-var HeaderBar = _styledComponents.default.header(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n   \n    width: 100%;\n    padding: 0.5em 1em;\n    display: flex;\n    height: 54px;\n    position: fixed;\n    align-items: center;\n    background-color: #fff;\n    box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);\n    z-index:1;\n\n"])));
+var HeaderBar = _styledComponents.default.header(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\nbackground: transparent;\n    width: 100%;\n    padding: 0.5em 1em;\n    display: flex;\n    height: 54px;\n    position: fixed;\n    align-items: center;\n    margin-bottom:2em;\n    border:none;\n    box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);\n    z-index:1;\n    border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(5px);\n    backdrop-filter:blur(15px);\n    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n    color: #fff;\n    font-weight: 500;\n    font-family:'Montserrat', sans-serif;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n    border-radius:5000px;\n"])));
 
 var LogoText = _styledComponents.default.h1(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    margin: 0;\n    padding: 0;\n    display: inline;\n"])));
 
@@ -50361,11 +50361,7 @@ var Header = function Header(props) {
       data = _useQuery.data,
       client = _useQuery.client;
 
-  return _react.default.createElement(HeaderBar, null, _react.default.createElement("img", {
-    src: _logo.default,
-    alt: "Notedly Logo",
-    height: "40"
-  }), _react.default.createElement(LogoText, null, "Everthink"), _react.default.createElement(UserState, null, data.isLoggedIn ? _react.default.createElement(_ButtonAsLink.default, {
+  return _react.default.createElement(HeaderBar, null, _react.default.createElement(LogoText, null, "Everthink"), _react.default.createElement(UserState, null, data.isLoggedIn ? _react.default.createElement(_ButtonAsLink.default, {
     onClick: function onClick() {
       localStorage.removeItem('token');
       client.resetStore();
@@ -50406,7 +50402,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Nav = _styledComponents.default.nav(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    padding: 1em;\n    background: #f5f4f0;\n    top:55px;\n    @media(max-width:700px){\n        padding-top: 94px;\n    }\n\n    @media(min-width:700px){\n        \n        position: fixed;\n        width:220px;\n        height: 100%;\n        overflow-y: scroll;\n    }\n"])));
+var Nav = _styledComponents.default.nav(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    padding: 1em;\n    background: transparent;\n    top:100px;\n    left:30px;\n    @media(max-width:700px){\n        padding-top: 54px;\n    }\n\n    @media(min-width:700px){\n        \n        position: fixed;\n        width:220px;\n        height: 80%;\n         \n    }\n    border:none;\n   border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(5px);\n    backdrop-filter:blur(15px);\n    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n    color: #fff;\n    font-weight: 500;\n    font-family:'Montserrat', sans-serif;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n    border-radius:20px;\n"])));
 
 var NavList = _styledComponents.default.ul(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin:0;\n    padding:0;\n    list-style:none;\n    line-height: 2;\n\n    a{\n        text-decoration: none;\n        font-weight:bold;\n        font-size: 1.1em;\n        color: #333;\n    }\n\n    a.visited{\n        color: #333;\n    }\n\n    a:hover,\n    a:focus{\n        color: #0077cc;\n    }\n\n"])));
 
@@ -50460,7 +50456,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n/* We can apply media query styles within the styled component */\n/* This will only apply the layout for screens above 700px wide */\n@media (min-width: 700px) {\ndisplay: flex;\ntop: 64px;\nposition: relative;\nheight: calc(100% - 64px);\nwidth: 100%;\nflex: auto;\nflex-direction: column;\n}\n"])));
 
-var Main = _styledComponents.default.main(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nposition: fixed;\nheight: calc(100% - 185px);\nwidth: 100%;\npadding: 1em;\noverflow-y: scroll;\n/* Again apply media query styles to screens above 700px */\n@media (min-width: 700px) {\nflex: 1;\nmargin-left: 220px;\nheight: calc(100% - 64px);\nwidth: calc(100% - 220px);\n}\n"])));
+var Main = _styledComponents.default.main(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nposition: fixed;\nheight: calc(100% - 185px);\nwidth: 100%;\npadding: 1em;\noverflow-y: scroll;\n/* Again apply media query styles to screens above 700px */\n@media (min-width: 700px) {\nflex: 1;\nmargin-left: 220px;\nheight: calc(100% - 64px);\nwidth: calc(100% - 220px);\nleft: 30px;\n}\n"])));
 
 var Layout = function Layout(_ref) {
   var children = _ref.children;
@@ -65131,7 +65127,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var StyledNote = _styledComponents.default.article(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: 800px;\n    margin: 0 auto;\n"])));
+var StyledNote = _styledComponents.default.article(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: 800px;\n    margin: 0 auto;\n    height: 150px;\n    padding: 1em;\n    margin: 0 auto;\n     \n    background: rgba(255,255,255,0.06);\n    padding: 3em;\n    height:40%;\n    border-radius: 20px;\n    border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(10px);\n    backdrop-filter:blur(5px);\n    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);\n    text-align:center;\n    position:relative;\n    -webkit-transform: all 0.2s ease-in-out;\n    \n    h2{\n        font-weight:500;\n        color: #fff;\n        opacity: 0.7;\n        font-size: 1.4rem;\n        margin-top: 0;\n        margin-bottom: 60px;\n        text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n    }\n"])));
 
 var Metadata = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n@media(min-width: 500px){\n    display: flex;\n    align-items:top;\n}\n\n"])));
 
@@ -65174,7 +65170,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var NoteWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nmax-width: 800px;\nmargin:0 auto;\nmargin-bottom: 2em;\npadding-bottom: 2em;\nborder-bottom: 1px solid #f5f4f0;\n"])));
+var NoteWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nmax-width: 800px;\nmargin:0 auto;\nmargin-bottom: 2em;\npadding-bottom: 2em;\nborder-bottom: 1px solid #f5f4f0;\n\n\n"])));
 
 var NoteFeed = function NoteFeed(_ref) {
   var notes = _ref.notes;
@@ -65397,9 +65393,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nborder: 1px solid #f5f4f0;\nmax-width: 500px;\npadding: 1em;\nmargin: 0 auto;\n"])));
+var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  \n height: 150px;\npadding: 1em;\nmargin: 0 auto;\n \nbackground: rgba(255,255,255,0.06);\npadding: 3em;\nheight:100%;\nborder-radius: 20px;\nborder-left:1px solid rgba( 255, 255, 255, 0.3 );\nborder-top:1px solid rgba( 255, 255, 255, 0.3 );\n-webkit-backdrop-filter:blur(10px);\nbackdrop-filter:blur(5px);\nbox-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);\ntext-align:center;\nposition:relative;\n-webkit-transform: all 0.2s ease-in-out;\n\nh2{\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n}\n"])));
 
-var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nlabel,\ninput{\ndisplay: block;\nline-height: 2em;\n}\n\ninput{\nwidth: 100%;\nmargin-bottom: 1em;\n}\n"])));
+var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n \n \n label{\n    \n    float: left;\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n }\ninput{\n    display: block;\n    line-height: 2em;\n    background: transparent;\n    width: 200px;\n    padding: 1em;\n    margin-bottom:2em;\n    border:none;\n     border-left:1px solid rgba( 255, 255, 255, 0.3 );\n      border-top:1px solid rgba( 255, 255, 255, 0.3 );\n      -webkit-backdrop-filter:blur(5px);\n      backdrop-filter:blur(15px);\n      box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n      color: #fff;\n      font-weight: 500;\n      font-family:'Montserrat', sans-serif;\n      -webkit-transition: all 0.2s ease-in-out;\n      transition: all 0.2s ease-in-out;\n      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n      border-radius:5000px;\n}\n\na {\n    text-decoration: none;\n    color: #ddd;\n    font-size: 12px;\n  \n  }\n\n  a:hover{\n    text-shadow: 2px 2px 6px #00000040;\n  \n  }\n  a:active{\n    text-shadow:none\n  }\np{\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n} \n\n\n"])));
 
 var UserForm = function UserForm(props) {
   var _useState = (0, _react.useState)(),
@@ -67341,7 +67337,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1259" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2505" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

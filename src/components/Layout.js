@@ -29,6 +29,7 @@ flex: 1;
 margin-left: 220px;
 height: calc(100% - 64px);
 width: calc(100% - 220px);
+left: 30px;
 }
 `;
 
