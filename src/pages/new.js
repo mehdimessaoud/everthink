@@ -23,7 +23,7 @@ mutation newNote($content: String!){
         }
     }
 }
-`
+`;
 const NewNote = props=>{
     useEffect(()=>{
         document.title="New Note - EverNote";

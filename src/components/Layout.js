@@ -18,6 +18,7 @@ flex-direction: column;
 }
 `;
 const Main = styled.main`
+ 
 position: fixed;
 height: calc(100% - 185px);
 width: 100%;
@@ -27,7 +28,7 @@ overflow-y: scroll;
 @media (min-width: 700px) {
 flex: 1;
 margin-left: 220px;
-height: calc(100% - 64px);
+height: calc(100% - 85px);
 width: calc(100% - 220px);
 left: 30px;
 }

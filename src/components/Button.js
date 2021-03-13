@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 const Button = styled.button`
-display: block;
+display: inline-block;
+font-weight: 500;
+font-family:'Montserrat', sans-serif;
+text-shadow: 2px 2px 4px rgba(0,0,0,1);
 padding: 10px;
 border: none;
 border-radius: 5px;

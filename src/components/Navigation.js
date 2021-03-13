@@ -4,10 +4,13 @@ import styled from 'styled-components';
 
 
 const Nav=styled.nav`
+position:relative;
+color:white;
+z-index:1;
     padding: 1em;
     background: transparent;
-    top:100px;
-    left:30px;
+    top:70px;
+    left:10px;
     @media(max-width:700px){
         padding-top: 54px;
     }
@@ -22,7 +25,7 @@ const Nav=styled.nav`
     border:none;
    border-left:1px solid rgba( 255, 255, 255, 0.3 );
     border-top:1px solid rgba( 255, 255, 255, 0.3 );
-    -webkit-backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(15px);
     backdrop-filter:blur(15px);
     box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);
     color: #fff;
@@ -30,7 +33,7 @@ const Nav=styled.nav`
     font-family:'Montserrat', sans-serif;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
     border-radius:20px;
 `;
 
@@ -39,21 +42,23 @@ const NavList=styled.ul`
     padding:0;
     list-style:none;
     line-height: 2;
-
+    color:white;
     a{
         text-decoration: none;
         font-weight:bold;
         font-size: 1.1em;
-        color: #333;
+        color: white;
     }
 
     a.visited{
-        color: #333;
+        color: #ddd;
+        text-shadow: 2px 2px 6px #00000040;
     }
 
     a:hover,
     a:focus{
-        color: #0077cc;
+         color: #ddd;
+        text-shadow: 2px 2px 6px #00000040;
     }
 
 `

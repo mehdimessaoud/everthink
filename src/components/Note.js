@@ -5,20 +5,26 @@ import styled from 'styled-components';
 
 
 const StyledNote= styled.article`
-    max-width: 800px;
+:hover{
+    border-left:1px solid rgba( 255, 255, 255, 0.3 );
+      border-top:1px solid rgba( 255, 255, 255, 0.3 );
+      box-shadow: -13px 2px 42px -14px rgba(0,0,0,1);
+}
+    max-width: 90%;
     margin: 0 auto;
-    height: 150px;
+    height: 5px;
     padding: 1em;
     margin: 0 auto;
-     
+    top:-5px;
+     left:-15px;
     background: rgba(255,255,255,0.06);
     padding: 3em;
-    height:40%;
+    height:30%;
     border-radius: 20px;
     border-left:1px solid rgba( 255, 255, 255, 0.3 );
     border-top:1px solid rgba( 255, 255, 255, 0.3 );
-    -webkit-backdrop-filter:blur(10px);
-    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(15px);
+    backdrop-filter:blur(100px);
     box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
     text-align:center;
     position:relative;
@@ -27,12 +33,13 @@ const StyledNote= styled.article`
     h2{
         font-weight:500;
         color: #fff;
-        opacity: 0.7;
+        opacity: 0;
         font-size: 1.4rem;
-        margin-top: 0;
+        margin-top: -30;
         margin-bottom: 60px;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.2)
     }
+    
 `;
 
 const Metadata= styled.div`
@@ -65,11 +72,11 @@ const Note= ({note}) =>{
             />
             </MetaInfo>
             <MetaInfo>
-                <em>By</em> {note.author.username} <br/>
+                 {note.author.username} <br/>
                 {format(note.createdAt, 'MMM Do YYYY')}
             </MetaInfo>
             <UserActions>
-                <em>Favorites:</em> {note.favoriteCount}
+                 ❤️ {note.favoriteCount}
             </UserActions>
             </Metadata>                    
             <ReactMarkdown source={note.content}/>

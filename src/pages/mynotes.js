@@ -1,4 +1,8 @@
 import React, { useEffect } from 'react';
+import {useQuery, gql} from '@apollo/client';
+
+import noteFeed from '../components/NoteFeed';
+import {GET_MY_NOTES} from '../gql/query';
 
 const MyNotes=()=>{
     useEffect(()=>{

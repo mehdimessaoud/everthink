@@ -5,24 +5,38 @@ import {Link} from 'react-router-dom';
 
 
 const NoteWrapper= styled.div`
-max-width: 800px;
+max-width: 500%;
 margin:0 auto;
 margin-bottom: 2em;
-padding-bottom: 2em;
-border-bottom: 1px solid #f5f4f0;
-
+padding-bottom: 2em; 
+color:white;
+left:-50px;
+font-weight: 700;
+font-family:'Montserrat', sans-serif;
+text-shadow: 2px 5px 7px rgba(0,0,0,50);
 
 `;
+
+const Linko=styled.a`
+:hover{
+    color:white;
+}
+
+`
 
 
 const NoteFeed = ({ notes }) => {
     return (
     <div>
+  
     {notes.map(note => (
+    <Link to={`note/${note.id}`} style={{textDecoration:'none'}}><Linko to={`note/${note.id}`}> 
     <NoteWrapper key={note.id}>
     <Note note={note} />
-    <Link to={`note/${note.id}`}>Permalink</Link>
+    
     </NoteWrapper>
+    </Linko>
+    </Link>
     ))}
     </div>
     );

@@ -12,8 +12,34 @@ const Form= styled.form`
 `;
 
 const TextArea = styled.textarea`
-    width: 100%;
-    height: 90%;
+    textarea:focus{
+        outline: none;
+    }
+    ::placeholder{
+        color:white;
+    }
+    width: 50%;
+    height: 20%;
+    position:center;
+    display: block;
+    line-height: 2em;
+    background: transparent;
+    outline: none;
+    padding: 1em;
+    margin-bottom:2em;
+    border:none;
+     border-left:1px solid rgba( 255, 255, 255, 0.3 );
+      border-top:1px solid rgba( 255, 255, 255, 0.3 );
+      -webkit-backdrop-filter:blur(5px);
+      backdrop-filter:blur(15px);
+      box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);
+      color: #fff;
+      font-weight: 500;
+      font-family:'Montserrat', sans-serif;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      border-radius:20px;
 `;
 
 const NoteForm= props=>{

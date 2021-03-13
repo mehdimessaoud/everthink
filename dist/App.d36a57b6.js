@@ -50316,9 +50316,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ButtonAsLink = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background: none;\n    color: #0077cc;\n    border: none;\n    padding: 0;\n    font: inherit;\n    text-decoration: underline;\n    cursor: pointer;\n    :hover,\n    :active{\n        color: #004499;\n    }\n"])));
+var ButtonAsLink = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background: none;\n    \n    color: white;\n    border: none;\n    padding: 0;\n    font: inherit;\n    text-decoration: none;\n    cursor: pointer;\n    :hover,\n    :active{\n        color: #004499;\n    }\n"])));
 
 var _default = ButtonAsLink;
+exports.default = _default;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/Button.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Button = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\ndisplay: inline-block;\nfont-weight: 500;\nfont-family:'Montserrat', sans-serif;\ntext-shadow: 2px 2px 4px rgba(0,0,0,1);\npadding: 10px;\nborder: none;\nborder-radius: 5px;\nfont-size: 18px;\ncolor: #fff;\nbackground-color: #0077cc;\ncursor: pointer;\n:hover {\nopacity: 0.8;\n}\n:active {\nbackground-color: #005fa3;\n}\n"])));
+
+var _default = Button;
 exports.default = _default;
 },{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/Header.js":[function(require,module,exports) {
 "use strict";
@@ -50340,7 +50360,9 @@ var _reactRouterDom = require("react-router-dom");
 
 var _ButtonAsLink = _interopRequireDefault(require("../components/ButtonAsLink"));
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+var _Button = _interopRequireDefault(require("./Button"));
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -50350,18 +50372,20 @@ var IS_LOGGED_IN = (0, _client.gql)(_templateObject || (_templateObject = _tagge
 
 var UserState = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin-left: auto;\n"])));
 
-var HeaderBar = _styledComponents.default.header(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\nbackground: transparent;\n    width: 100%;\n    padding: 0.5em 1em;\n    display: flex;\n    height: 54px;\n    position: fixed;\n    align-items: center;\n    margin-bottom:2em;\n    border:none;\n    box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);\n    z-index:1;\n    border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(5px);\n    backdrop-filter:blur(15px);\n    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n    color: #fff;\n    font-weight: 500;\n    font-family:'Montserrat', sans-serif;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n    border-radius:5000px;\n"])));
+var StyledLink = _styledComponents.default.div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\ndisplay: inline-block;\ncolor:red;\n"])));
 
-var LogoText = _styledComponents.default.h1(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    margin: 0;\n    padding: 0;\n    display: inline;\n"])));
+var HeaderBar = _styledComponents.default.header(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\nbackground: transparent;\n    width: 100%;\n    padding: 0.5em 1em;\n    display: flex;\n    height: 54px;\n    position: fixed;\n    align-items: center;\n    margin-bottom:2em;\n    border:none;\n    box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);\n    z-index:1;\n    border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(5px);\n    backdrop-filter:blur(15px);\n    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n    color: #fff;\n    font-weight: 500;\n    font-family:'Montserrat', sans-serif;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;\n    text-shadow: 2px 2px 4px rgba(0,0,0,5);\n    border-radius:0px;\n"])));
 
-var Logo = _styledComponents.default.img(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    top:700px;\n"])));
+var LogoText = _styledComponents.default.h1(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    margin: 0;\n    padding: 0;\n    display: inline;\n"])));
+
+var Logo = _styledComponents.default.img(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    top:700px;\n"])));
 
 var Header = function Header(props) {
   var _useQuery = (0, _client.useQuery)(IS_LOGGED_IN),
       data = _useQuery.data,
       client = _useQuery.client;
 
-  return _react.default.createElement(HeaderBar, null, _react.default.createElement(LogoText, null, "Everthink"), _react.default.createElement(UserState, null, data.isLoggedIn ? _react.default.createElement(_ButtonAsLink.default, {
+  return _react.default.createElement(HeaderBar, null, _react.default.createElement(LogoText, null, "Everthink"), _react.default.createElement(UserState, null, data.isLoggedIn ? _react.default.createElement(_Button.default, null, "   ", _react.default.createElement(_ButtonAsLink.default, {
     onClick: function onClick() {
       localStorage.removeItem('token');
       client.resetStore();
@@ -50372,17 +50396,27 @@ var Header = function Header(props) {
       });
       props.history.push('/');
     }
-  }, "Logout") : _react.default.createElement("p", null, _react.default.createElement(_reactRouterDom.Link, {
-    to: '/signup'
-  }, "Sign up"), " or", ' ', _react.default.createElement(_reactRouterDom.Link, {
-    to: '/signin'
-  }, "Sign in"))));
+  }, "Logout")) : _react.default.createElement("p", null, _react.default.createElement(_Button.default, null, " ", _react.default.createElement(_reactRouterDom.Link, {
+    to: '/signup',
+    style: {
+      textDecoration: 'none',
+      color: 'white',
+      display: "inline-block"
+    }
+  }, "Sign up")), " or", ' ', _react.default.createElement(_Button.default, null, " ", _react.default.createElement(_reactRouterDom.Link, {
+    to: '/signin',
+    style: {
+      textDecoration: 'none',
+      color: 'white',
+      display: "inline-block"
+    }
+  }, "Sign in")))));
 };
 
 var _default = (0, _reactRouterDom.withRouter)(Header);
 
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../img/logo.svg":"img/logo.svg","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../components/ButtonAsLink":"components/ButtonAsLink.js"}],"components/Navigation.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../img/logo.svg":"img/logo.svg","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../components/ButtonAsLink":"components/ButtonAsLink.js","./Button":"components/Button.js"}],"components/Navigation.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -50402,9 +50436,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Nav = _styledComponents.default.nav(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    padding: 1em;\n    background: transparent;\n    top:100px;\n    left:30px;\n    @media(max-width:700px){\n        padding-top: 54px;\n    }\n\n    @media(min-width:700px){\n        \n        position: fixed;\n        width:220px;\n        height: 80%;\n         \n    }\n    border:none;\n   border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(5px);\n    backdrop-filter:blur(15px);\n    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n    color: #fff;\n    font-weight: 500;\n    font-family:'Montserrat', sans-serif;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n    border-radius:20px;\n"])));
+var Nav = _styledComponents.default.nav(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nposition:relative;\ncolor:white;\nz-index:1;\n    padding: 1em;\n    background: transparent;\n    top:70px;\n    left:10px;\n    @media(max-width:700px){\n        padding-top: 54px;\n    }\n\n    @media(min-width:700px){\n        \n        position: fixed;\n        width:220px;\n        height: 80%;\n         \n    }\n    border:none;\n   border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(15px);\n    backdrop-filter:blur(15px);\n    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n    color: #fff;\n    font-weight: 500;\n    font-family:'Montserrat', sans-serif;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;\n    text-shadow: 2px 2px 4px rgba(0,0,0,1);\n    border-radius:20px;\n"])));
 
-var NavList = _styledComponents.default.ul(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin:0;\n    padding:0;\n    list-style:none;\n    line-height: 2;\n\n    a{\n        text-decoration: none;\n        font-weight:bold;\n        font-size: 1.1em;\n        color: #333;\n    }\n\n    a.visited{\n        color: #333;\n    }\n\n    a:hover,\n    a:focus{\n        color: #0077cc;\n    }\n\n"])));
+var NavList = _styledComponents.default.ul(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin:0;\n    padding:0;\n    list-style:none;\n    line-height: 2;\n    color:white;\n    a{\n        text-decoration: none;\n        font-weight:bold;\n        font-size: 1.1em;\n        color: white;\n    }\n\n    a.visited{\n        color: #ddd;\n        text-shadow: 2px 2px 6px #00000040;\n    }\n\n    a:hover,\n    a:focus{\n         color: #ddd;\n        text-shadow: 2px 2px 6px #00000040;\n    }\n\n"])));
 
 var Navigation = function Navigation() {
   return _react.default.createElement(Nav, null, _react.default.createElement(NavList, null, _react.default.createElement("li", null, _react.default.createElement("span", {
@@ -50456,7 +50490,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n/* We can apply media query styles within the styled component */\n/* This will only apply the layout for screens above 700px wide */\n@media (min-width: 700px) {\ndisplay: flex;\ntop: 64px;\nposition: relative;\nheight: calc(100% - 64px);\nwidth: 100%;\nflex: auto;\nflex-direction: column;\n}\n"])));
 
-var Main = _styledComponents.default.main(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nposition: fixed;\nheight: calc(100% - 185px);\nwidth: 100%;\npadding: 1em;\noverflow-y: scroll;\n/* Again apply media query styles to screens above 700px */\n@media (min-width: 700px) {\nflex: 1;\nmargin-left: 220px;\nheight: calc(100% - 64px);\nwidth: calc(100% - 220px);\nleft: 30px;\n}\n"])));
+var Main = _styledComponents.default.main(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n \nposition: fixed;\nheight: calc(100% - 185px);\nwidth: 100%;\npadding: 1em;\noverflow-y: scroll;\n/* Again apply media query styles to screens above 700px */\n@media (min-width: 700px) {\nflex: 1;\nmargin-left: 220px;\nheight: calc(100% - 85px);\nwidth: calc(100% - 220px);\nleft: 30px;\n}\n"])));
 
 var Layout = function Layout(_ref) {
   var children = _ref.children;
@@ -50465,27 +50499,7 @@ var Layout = function Layout(_ref) {
 
 var _default = Layout;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./Header":"components/Header.js","./Navigation":"components/Navigation.js"}],"components/Button.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _templateObject;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Button = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\ndisplay: block;\npadding: 10px;\nborder: none;\nborder-radius: 5px;\nfont-size: 18px;\ncolor: #fff;\nbackground-color: #0077cc;\ncursor: pointer;\n:hover {\nopacity: 0.8;\n}\n:active {\nbackground-color: #005fa3;\n}\n"])));
-
-var _default = Button;
-exports.default = _default;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../node_modules/xtend/immutable.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./Header":"components/Header.js","./Navigation":"components/Navigation.js"}],"../node_modules/xtend/immutable.js":[function(require,module,exports) {
 module.exports = extend;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
@@ -65127,7 +65141,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var StyledNote = _styledComponents.default.article(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: 800px;\n    margin: 0 auto;\n    height: 150px;\n    padding: 1em;\n    margin: 0 auto;\n     \n    background: rgba(255,255,255,0.06);\n    padding: 3em;\n    height:40%;\n    border-radius: 20px;\n    border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(10px);\n    backdrop-filter:blur(5px);\n    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);\n    text-align:center;\n    position:relative;\n    -webkit-transform: all 0.2s ease-in-out;\n    \n    h2{\n        font-weight:500;\n        color: #fff;\n        opacity: 0.7;\n        font-size: 1.4rem;\n        margin-top: 0;\n        margin-bottom: 60px;\n        text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n    }\n"])));
+var StyledNote = _styledComponents.default.article(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n:hover{\n    border-left:1px solid rgba( 255, 255, 255, 0.3 );\n      border-top:1px solid rgba( 255, 255, 255, 0.3 );\n      box-shadow: -13px 2px 42px -14px rgba(0,0,0,1);\n}\n    max-width: 90%;\n    margin: 0 auto;\n    height: 5px;\n    padding: 1em;\n    margin: 0 auto;\n    top:-5px;\n     left:-15px;\n    background: rgba(255,255,255,0.06);\n    padding: 3em;\n    height:30%;\n    border-radius: 20px;\n    border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(15px);\n    backdrop-filter:blur(100px);\n    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);\n    text-align:center;\n    position:relative;\n    -webkit-transform: all 0.2s ease-in-out;\n    \n    h2{\n        font-weight:500;\n        color: #fff;\n        opacity: 0;\n        font-size: 1.4rem;\n        margin-top: -30;\n        margin-bottom: 60px;\n        text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n    }\n    \n"])));
 
 var Metadata = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n@media(min-width: 500px){\n    display: flex;\n    align-items:top;\n}\n\n"])));
 
@@ -65141,7 +65155,7 @@ var Note = function Note(_ref) {
     src: note.author.avatar,
     alt: "{note.author.username} avatar",
     height: "50px"
-  })), _react.default.createElement(MetaInfo, null, _react.default.createElement("em", null, "By"), " ", note.author.username, " ", _react.default.createElement("br", null), (0, _dateFns.format)(note.createdAt, 'MMM Do YYYY')), _react.default.createElement(UserActions, null, _react.default.createElement("em", null, "Favorites:"), " ", note.favoriteCount)), _react.default.createElement(_reactMarkdown.default, {
+  })), _react.default.createElement(MetaInfo, null, note.author.username, " ", _react.default.createElement("br", null), (0, _dateFns.format)(note.createdAt, 'MMM Do YYYY')), _react.default.createElement(UserActions, null, "\u2764\uFE0F ", note.favoriteCount)), _react.default.createElement(_reactMarkdown.default, {
     source: note.content
   }));
 };
@@ -65164,24 +65178,31 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _templateObject;
+var _templateObject, _templateObject2;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var NoteWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nmax-width: 800px;\nmargin:0 auto;\nmargin-bottom: 2em;\npadding-bottom: 2em;\nborder-bottom: 1px solid #f5f4f0;\n\n\n"])));
+var NoteWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nmax-width: 500%;\nmargin:0 auto;\nmargin-bottom: 2em;\npadding-bottom: 2em; \ncolor:white;\nleft:-50px;\nfont-weight: 700;\nfont-family:'Montserrat', sans-serif;\ntext-shadow: 2px 5px 7px rgba(0,0,0,50);\n\n"])));
+
+var Linko = _styledComponents.default.a(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n:hover{\n    color:white;\n}\n\n"])));
 
 var NoteFeed = function NoteFeed(_ref) {
   var notes = _ref.notes;
   return _react.default.createElement("div", null, notes.map(function (note) {
-    return _react.default.createElement(NoteWrapper, {
+    return _react.default.createElement(_reactRouterDom.Link, {
+      to: "note/".concat(note.id),
+      style: {
+        textDecoration: 'none'
+      }
+    }, _react.default.createElement(Linko, {
+      to: "note/".concat(note.id)
+    }, _react.default.createElement(NoteWrapper, {
       key: note.id
     }, _react.default.createElement(_Note.default, {
       note: note
-    }), _react.default.createElement(_reactRouterDom.Link, {
-      to: "note/".concat(note.id)
-    }, "Permalink"));
+    }))));
   }));
 };
 
@@ -65261,7 +65282,30 @@ var Home = function Home() {
 
 var _default = Home;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","../components/Button":"components/Button.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-markdown":"../node_modules/react-markdown/lib/react-markdown.js","../components/NoteFeed":"components/NoteFeed.js"}],"pages/mynotes.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../components/Button":"components/Button.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-markdown":"../node_modules/react-markdown/lib/react-markdown.js","../components/NoteFeed":"components/NoteFeed.js"}],"gql/query.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.GET_MY_NOTES = exports.IS_LOGGED_IN = exports.GET_NOTE = exports.GET_NOTES = void 0;
+
+var _client = require("@apollo/client");
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var GET_MY_NOTES = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nquery me{\n    me{\n        id\n        username\n        notes{\n            notes{\n                id\n                createdAt\n                content\n                favoriteCount\n                author{\n                    username\n                    id\n                    avatar\n                }\n            }\n        }\n    }\n}\n"])));
+exports.GET_MY_NOTES = GET_MY_NOTES;
+var GET_NOTE = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    query note($id: ID!){\n        note(id: $id){\n            id\n            createdAt\n            content\n            favoriteCount\n            author{\n                username\n                id\n                avatar\n            }\n        }\n    }\n\n"])));
+exports.GET_NOTE = GET_NOTE;
+var NEW_NOTE = (0, _client.gql)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\nmutation newNote($content: String!){\n    newNote(content: $content){\n        id\n        content\n        createdAt\n        favoriteCount\n        favoritedBy{\n            id\n            username            \n        }author{\n            username\n            id\n        }\n    }\n}\n"])));
+var GET_NOTES = (0, _client.gql)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\nquery noteFeed($cursor: String){\n    noteFeed(cursor:  $cursor){\n        cursor\n        hasNextPage\n        notes{\n            id\n            createdAt\n            content\n            favoriteCount\n            author{\n                username\n                id\n                avatar            \n            }\n        }\n    }\n}\n"])));
+exports.GET_NOTES = GET_NOTES;
+var IS_LOGGED_IN = (0, _client.gql)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n{\n    isLoggedIn @client\n}\n"])));
+exports.IS_LOGGED_IN = IS_LOGGED_IN;
+},{"@apollo/client":"../node_modules/@apollo/client/index.js"}],"pages/mynotes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -65270,6 +65314,14 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _client = require("@apollo/client");
+
+var _NoteFeed = _interopRequireDefault(require("../components/NoteFeed"));
+
+var _query = require("../gql/query");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -65285,7 +65337,7 @@ var MyNotes = function MyNotes() {
 
 var _default = MyNotes;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"pages/favorites.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteFeed":"components/NoteFeed.js","../gql/query":"gql/query.js"}],"pages/favorites.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -65393,9 +65445,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  \n height: 150px;\npadding: 1em;\nmargin: 0 auto;\n \nbackground: rgba(255,255,255,0.06);\npadding: 3em;\nheight:100%;\nborder-radius: 20px;\nborder-left:1px solid rgba( 255, 255, 255, 0.3 );\nborder-top:1px solid rgba( 255, 255, 255, 0.3 );\n-webkit-backdrop-filter:blur(10px);\nbackdrop-filter:blur(5px);\nbox-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);\ntext-align:center;\nposition:relative;\n-webkit-transform: all 0.2s ease-in-out;\n\nh2{\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n}\n"])));
+var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  \npadding: 1em;\nmargin: 0 auto;\n top:-10px;\n left: -15px;\nbackground: rgba(255,255,255,0.06);\npadding: 3em;\nheight:95%;\nborder-radius: 20px;\nborder-left:1px solid rgba( 255, 255, 255, 0.3 );\nborder-top:1px solid rgba( 255, 255, 255, 0.3 );\n-webkit-backdrop-filter:blur(10px);\nbackdrop-filter:blur(5px);\nbox-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);\ntext-align:center;\nposition:relative;\n-webkit-transform: all 0.2s ease-in-out;\n\nh2{\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n}\n"])));
 
-var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n \n \n label{\n    \n    float: left;\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n }\ninput{\n    display: block;\n    line-height: 2em;\n    background: transparent;\n    width: 200px;\n    padding: 1em;\n    margin-bottom:2em;\n    border:none;\n     border-left:1px solid rgba( 255, 255, 255, 0.3 );\n      border-top:1px solid rgba( 255, 255, 255, 0.3 );\n      -webkit-backdrop-filter:blur(5px);\n      backdrop-filter:blur(15px);\n      box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n      color: #fff;\n      font-weight: 500;\n      font-family:'Montserrat', sans-serif;\n      -webkit-transition: all 0.2s ease-in-out;\n      transition: all 0.2s ease-in-out;\n      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n      border-radius:5000px;\n}\n\na {\n    text-decoration: none;\n    color: #ddd;\n    font-size: 12px;\n  \n  }\n\n  a:hover{\n    text-shadow: 2px 2px 6px #00000040;\n  \n  }\n  a:active{\n    text-shadow:none\n  }\np{\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n} \n\n\n"])));
+var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n \n \n label{\n    position:fixed;\n    float: left;\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n }\n\n ::placeholder{\n  font-family: 'Montserrat', sans-serif;\n  font-weight: 400;\n  color: #fff;\n  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);\n}\ninput{\n  ::placeholder{\n    color:white;\n  }\n  outline:none;\n    position:center;\n    display: block;\n    line-height: 2em;\n    background: transparent;\n    width: 200px;\n    padding: 1em;\n    margin-bottom:2em;\n    border:none;\n     border-left:1px solid rgba( 255, 255, 255, 0.3 );\n      border-top:1px solid rgba( 255, 255, 255, 0.3 );\n      -webkit-backdrop-filter:blur(5px);\n      backdrop-filter:blur(15px);\n      box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n      color: #fff;\n      font-weight: 500;\n      font-family:'Montserrat', sans-serif;\n      -webkit-transition: all 0.2s ease-in-out;\n      transition: all 0.2s ease-in-out;\n      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n      border-radius:5000px;\n}\n\na {\n    text-decoration: none;\n    color: #ddd;\n    font-size: 12px;\n  \n  }\n\n  a:hover{\n    text-shadow: 2px 2px 6px #00000040;\n  \n  }\n  a:active{\n    text-shadow:none\n  }\np{\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n} \n\n\n"])));
 
 var UserForm = function UserForm(props) {
   var _useState = (0, _react.useState)(),
@@ -65414,27 +65466,21 @@ var UserForm = function UserForm(props) {
         variables: _objectSpread({}, values)
       });
     }
-  }, props.formType === 'signup' && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("label", {
-    htmlFor: "username"
-  }, "Username:"), _react.default.createElement("input", {
+  }, props.formType === 'signup' && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("input", {
     required: true,
     type: "text",
     id: "username",
     name: "username",
     placeholder: "username",
     onChange: onChange
-  })), _react.default.createElement("label", {
-    htmlFor: "email"
-  }, "Email:"), _react.default.createElement("input", {
+  })), _react.default.createElement("input", {
     required: true,
     type: "email",
     id: "email",
     name: "email",
     placeholder: "Email",
     onChange: onChange
-  }), _react.default.createElement("label", {
-    htmlFor: "password"
-  }, "Password:"), _react.default.createElement("input", {
+  }), _react.default.createElement("input", {
     required: true,
     type: "password",
     id: "password",
@@ -65657,7 +65703,7 @@ var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject 
 
 var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    height: 100%;\n"])));
 
-var TextArea = _styledComponents.default.textarea(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 90%;\n"])));
+var TextArea = _styledComponents.default.textarea(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    textarea:focus{\n        outline: none;\n    }\n    ::placeholder{\n        color:white;\n    }\n    width: 50%;\n    height: 20%;\n    position:center;\n    display: block;\n    line-height: 2em;\n    background: transparent;\n    outline: none;\n    padding: 1em;\n    margin-bottom:2em;\n    border:none;\n     border-left:1px solid rgba( 255, 255, 255, 0.3 );\n      border-top:1px solid rgba( 255, 255, 255, 0.3 );\n      -webkit-backdrop-filter:blur(5px);\n      backdrop-filter:blur(15px);\n      box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n      color: #fff;\n      font-weight: 500;\n      font-family:'Montserrat', sans-serif;\n      -webkit-transition: all 0.2s ease-in-out;\n      transition: all 0.2s ease-in-out;\n      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n      border-radius:20px;\n"])));
 
 var NoteForm = function NoteForm(props) {
   var _useState = (0, _react.useState)({
@@ -67337,7 +67383,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2505" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2659" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

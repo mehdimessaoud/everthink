@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useQuery,gql } from '@apollo/client';
 import { Link, withRouter } from 'react-router-dom';
 import ButtonAsLink from '../components/ButtonAsLink';
+import Button from './Button'
 
 const IS_LOGGED_IN= gql`
 {
@@ -15,7 +16,10 @@ const UserState=styled.div`
     margin-left: auto;
 `;
 
-
+const StyledLink= styled.div`
+display: inline-block;
+color:red;
+`
 const HeaderBar= styled.header`
 background: transparent;
     width: 100%;
@@ -38,8 +42,8 @@ background: transparent;
     font-family:'Montserrat', sans-serif;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    border-radius:5000px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,5);
+    border-radius:0px;
 `;
 
 const LogoText= styled.h1`
@@ -63,7 +67,7 @@ const Header = props =>{
         <LogoText>Everthink</LogoText>
             <UserState>
                 {data.isLoggedIn ? (
-                    <ButtonAsLink
+                 <Button>   <ButtonAsLink
                     onClick={()=>{
                     localStorage.removeItem('token');
                     client.resetStore();
@@ -74,10 +78,15 @@ const Header = props =>{
                     >
                         Logout
                     </ButtonAsLink>
+                    </Button>
                   ):(
                     <p>
-                    <Link to={'/signup'}>Sign up</Link> or{' '}
-                    <Link to={'/signin'}>Sign in</Link>
+           
+               <Button> < Link to={'/signup'} style={{ textDecoration: 'none', color:'white' ,display:"inline-block"}}>Sign up</ Link></Button> or{' '}
+                   <Button> < Link to={'/signin'} style={{ textDecoration: 'none' ,color:'white',display:"inline-block"}}>Sign in</ Link>
+                       </Button> 
+             
+              
                     </p>
                   )}
               

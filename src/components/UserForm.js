@@ -6,13 +6,13 @@ import Button from './Button';
 
 const Wrapper=styled.div`
   
- height: 150px;
 padding: 1em;
 margin: 0 auto;
- 
+ top:-10px;
+ left: -15px;
 background: rgba(255,255,255,0.06);
 padding: 3em;
-height:100%;
+height:95%;
 border-radius: 20px;
 border-left:1px solid rgba( 255, 255, 255, 0.3 );
 border-top:1px solid rgba( 255, 255, 255, 0.3 );
@@ -38,7 +38,7 @@ const Form= styled.form`
  
  
  label{
-    
+    position:fixed;
     float: left;
     font-weight:500;
     color: #fff;
@@ -48,7 +48,19 @@ const Form= styled.form`
     margin-bottom: 60px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2)
  }
+
+ ::placeholder{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
 input{
+  ::placeholder{
+    color:white;
+  }
+  outline:none;
+    position:center;
     display: block;
     line-height: 2em;
     background: transparent;
@@ -124,7 +136,7 @@ const UserForm= props=>{
         >
         {props.formType === 'signup' && (
         <React.Fragment>
-        <label htmlFor="username">Username:</label>
+      
         <input
         required
         type="text"
@@ -135,7 +147,7 @@ const UserForm= props=>{
         />
         </React.Fragment>
         )}
-        <label htmlFor="email">Email:</label>
+         
         <input
         required
         type="email"
@@ -144,7 +156,7 @@ const UserForm= props=>{
         placeholder="Email"
         onChange={onChange}
         />
-        <label htmlFor="password">Password:</label>
+         
         <input
         required
         type="password"
