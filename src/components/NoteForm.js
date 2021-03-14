@@ -38,7 +38,7 @@ const TextArea = styled.textarea`
       font-family:'Montserrat', sans-serif;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      text-shadow: 2px 2px 4px white ;
       border-radius:20px;
 `;
 

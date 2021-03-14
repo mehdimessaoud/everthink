@@ -39,7 +39,7 @@ const NewNote = props=>{
     return (
         <React.Fragment>
             {loading && <p>Loading...</p>}
-            {error && <P> </P>}
+            {error && <p>{error.message}</p>}
             <NoteForm action={data}/>
             </React.Fragment>
     );

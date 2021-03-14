@@ -50336,7 +50336,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Button = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\ndisplay: inline-block;\nfont-weight: 500;\nfont-family:'Montserrat', sans-serif;\ntext-shadow: 2px 2px 4px rgba(0,0,0,1);\npadding: 10px;\nborder: none;\nborder-radius: 5px;\nfont-size: 18px;\ncolor: #fff;\nbackground-color: #0077cc;\ncursor: pointer;\n:hover {\nopacity: 0.8;\n}\n:active {\nbackground-color: #005fa3;\n}\n"])));
+var Button = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\ndisplay: inline-block;\nfont-weight: 500;\nfont-family:'Montserrat', sans-serif;\ntext-shadow: 0px 0px 4px white;\nbox-shadow: 0px 0px 4px #0077cc;\npadding: 10px;\nborder: none;\nborder-radius: 5px;\nfont-size: 18px;\ncolor: #fff;\nbackground-color: #0077cc;\ncursor: pointer;\n:hover {\nopacity: 0.8;\n}\n:active {\nbackground-color: #005fa3;\n}\n"])));
 
 var _default = Button;
 exports.default = _default;
@@ -50374,7 +50374,7 @@ var UserState = _styledComponents.default.div(_templateObject2 || (_templateObje
 
 var StyledLink = _styledComponents.default.div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\ndisplay: inline-block;\ncolor:red;\n"])));
 
-var HeaderBar = _styledComponents.default.header(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\nbackground: transparent;\n    width: 100%;\n    padding: 0.5em 1em;\n    display: flex;\n    height: 54px;\n    position: fixed;\n    align-items: center;\n    margin-bottom:2em;\n    border:none;\n    box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);\n    z-index:1;\n    border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(5px);\n    backdrop-filter:blur(15px);\n    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n    color: #fff;\n    font-weight: 500;\n    font-family:'Montserrat', sans-serif;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;\n    text-shadow: 2px 2px 4px rgba(0,0,0,5);\n    border-radius:0px;\n"])));
+var HeaderBar = _styledComponents.default.header(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\nbackground: transparent;\n    width: 100%;\n    padding: 0.5em 1em;\n    display: flex;\n    height: 54px;\n    position: fixed;\n    align-items: center;\n    margin-bottom:2em;\n    border:none;\n    box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);\n    z-index:1;\n    border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(5px);\n    backdrop-filter:blur(15px);\n    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n    color: #fff;\n    font-weight: 500;\n    font-family:'Montserrat', sans-serif;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;\n    text-shadow: 0px 0px 4px white;\n    border-radius:0px;\n"])));
 
 var LogoText = _styledComponents.default.h1(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    margin: 0;\n    padding: 0;\n    display: inline;\n"])));
 
@@ -50436,7 +50436,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Nav = _styledComponents.default.nav(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nposition:relative;\ncolor:white;\nz-index:1;\n    padding: 1em;\n    background: transparent;\n    top:70px;\n    left:10px;\n    @media(max-width:700px){\n        padding-top: 54px;\n    }\n\n    @media(min-width:700px){\n        \n        position: fixed;\n        width:220px;\n        height: 80%;\n         \n    }\n    border:none;\n   border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(15px);\n    backdrop-filter:blur(15px);\n    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n    color: #fff;\n    font-weight: 500;\n    font-family:'Montserrat', sans-serif;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;\n    text-shadow: 2px 2px 4px rgba(0,0,0,1);\n    border-radius:20px;\n"])));
+var Nav = _styledComponents.default.nav(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nposition:relative;\ncolor:white;\nz-index:1;\n    padding: 1em;\n    background: transparent;\n    top:70px;\n    left:10px;\n    @media(max-width:700px){\n        padding-top: 54px;\n    }\n\n    @media(min-width:700px){\n        \n        position: fixed;\n        width:220px;\n        height: 80%;\n         \n    }\n    border:none;\n   border-left:1px solid rgba( 255, 255, 255, 0.3 );\n    border-top:1px solid rgba( 255, 255, 255, 0.3 );\n    -webkit-backdrop-filter:blur(15px);\n    backdrop-filter:blur(15px);\n    box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n    color: #fff;\n    font-weight: 500;\n    font-family:'Montserrat', sans-serif;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;\n    text-shadow: 1px 1px 7px white;\n    border-radius:20px;\n"])));
 
 var NavList = _styledComponents.default.ul(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    margin:0;\n    padding:0;\n    list-style:none;\n    line-height: 2;\n    color:white;\n    a{\n        text-decoration: none;\n        font-weight:bold;\n        font-size: 1.1em;\n        color: white;\n    }\n\n    a.visited{\n        color: #ddd;\n        text-shadow: 2px 2px 6px #00000040;\n    }\n\n    a:hover,\n    a:focus{\n         color: #ddd;\n        text-shadow: 2px 2px 6px #00000040;\n    }\n\n"])));
 
@@ -65184,7 +65184,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var NoteWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nmax-width: 500%;\nmargin:0 auto;\nmargin-bottom: 2em;\npadding-bottom: 2em; \ncolor:white;\nleft:-50px;\nfont-weight: 700;\nfont-family:'Montserrat', sans-serif;\ntext-shadow: 2px 5px 7px rgba(0,0,0,50);\n\n"])));
+var NoteWrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nmax-width: 500%;\nmargin:0 auto;\nmargin-bottom: 2em;\npadding-bottom: 2em; \ncolor:white;\nleft:-50px;\nfont-weight: 700;\nfont-family:'Montserrat', sans-serif;\ntext-shadow: 1px 2px 7px  white;\n\n"])));
 
 var Linko = _styledComponents.default.a(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n:hover{\n    color:white;\n}\n\n"])));
 
@@ -65652,7 +65652,7 @@ var SignIn = function SignIn(props) {
   return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_UserForm.default, {
     action: signIn,
     formType: "signIn"
-  }), loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement("p", null, "Error signing in!"));
+  }), loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement("p", null, error.message));
 };
 
 var _default = SignIn;
@@ -65703,7 +65703,7 @@ var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject 
 
 var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    height: 100%;\n"])));
 
-var TextArea = _styledComponents.default.textarea(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    textarea:focus{\n        outline: none;\n    }\n    ::placeholder{\n        color:white;\n    }\n    width: 50%;\n    height: 20%;\n    position:center;\n    display: block;\n    line-height: 2em;\n    background: transparent;\n    outline: none;\n    padding: 1em;\n    margin-bottom:2em;\n    border:none;\n     border-left:1px solid rgba( 255, 255, 255, 0.3 );\n      border-top:1px solid rgba( 255, 255, 255, 0.3 );\n      -webkit-backdrop-filter:blur(5px);\n      backdrop-filter:blur(15px);\n      box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n      color: #fff;\n      font-weight: 500;\n      font-family:'Montserrat', sans-serif;\n      -webkit-transition: all 0.2s ease-in-out;\n      transition: all 0.2s ease-in-out;\n      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n      border-radius:20px;\n"])));
+var TextArea = _styledComponents.default.textarea(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    textarea:focus{\n        outline: none;\n    }\n    ::placeholder{\n        color:white;\n    }\n    width: 50%;\n    height: 20%;\n    position:center;\n    display: block;\n    line-height: 2em;\n    background: transparent;\n    outline: none;\n    padding: 1em;\n    margin-bottom:2em;\n    border:none;\n     border-left:1px solid rgba( 255, 255, 255, 0.3 );\n      border-top:1px solid rgba( 255, 255, 255, 0.3 );\n      -webkit-backdrop-filter:blur(5px);\n      backdrop-filter:blur(15px);\n      box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n      color: #fff;\n      font-weight: 500;\n      font-family:'Montserrat', sans-serif;\n      -webkit-transition: all 0.2s ease-in-out;\n      transition: all 0.2s ease-in-out;\n      text-shadow: 2px 2px 4px white ;\n      border-radius:20px;\n"])));
 
 var NoteForm = function NoteForm(props) {
   var _useState = (0, _react.useState)({
@@ -65796,7 +65796,7 @@ var NewNote = function NewNote(props) {
       loading = _useMutation2$.loading,
       error = _useMutation2$.error;
 
-  return _react.default.createElement(_react.default.Fragment, null, loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement(P, null, " "), _react.default.createElement(_NoteForm.default, {
+  return _react.default.createElement(_react.default.Fragment, null, loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement("p", null, error.message), _react.default.createElement(_NoteForm.default, {
     action: data
   }));
 };
@@ -67383,7 +67383,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2659" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "8671" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -33,7 +33,7 @@ z-index:1;
     font-family:'Montserrat', sans-serif;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+    text-shadow: 1px 1px 7px white;
     border-radius:20px;
 `;
 

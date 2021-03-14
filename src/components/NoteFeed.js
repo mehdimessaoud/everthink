@@ -13,7 +13,7 @@ color:white;
 left:-50px;
 font-weight: 700;
 font-family:'Montserrat', sans-serif;
-text-shadow: 2px 5px 7px rgba(0,0,0,50);
+text-shadow: 1px 2px 7px  white;
 
 `;
 

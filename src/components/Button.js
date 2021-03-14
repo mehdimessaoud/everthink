@@ -3,7 +3,8 @@ const Button = styled.button`
 display: inline-block;
 font-weight: 500;
 font-family:'Montserrat', sans-serif;
-text-shadow: 2px 2px 4px rgba(0,0,0,1);
+text-shadow: 0px 0px 4px white;
+box-shadow: 0px 0px 4px #0077cc;
 padding: 10px;
 border: none;
 border-radius: 5px;
