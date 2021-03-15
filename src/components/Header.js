@@ -42,7 +42,13 @@ background: transparent;
     font-family:'Montserrat', sans-serif;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    text-shadow: 0px 0px 4px white;
+    font-weight:500;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)
     border-radius:0px;
 `;
 
@@ -50,6 +56,7 @@ const LogoText= styled.h1`
     margin: 0;
     padding: 0;
     display: inline;
+    text-shadow: 0px 0px 4px white;
 `;
 
 
@@ -67,7 +74,7 @@ const Header = props =>{
         <LogoText>Everthink</LogoText>
             <UserState>
                 {data.isLoggedIn ? (
-                 <Button>   <ButtonAsLink
+                   <ButtonAsLink
                     onClick={()=>{
                     localStorage.removeItem('token');
                     client.resetStore();
@@ -78,13 +85,13 @@ const Header = props =>{
                     >
                         Logout
                     </ButtonAsLink>
-                    </Button>
+                   
                   ):(
                     <p>
            
-               <Button> < Link to={'/signup'} style={{ textDecoration: 'none', color:'white' ,display:"inline-block"}}>Sign up</ Link></Button> or{' '}
-                   <Button> < Link to={'/signin'} style={{ textDecoration: 'none' ,color:'white',display:"inline-block"}}>Sign in</ Link>
-                       </Button> 
+                 < Link to={'/signup'} style={{ textDecoration: 'none', color:'white' ,display:"inline-block"}}>Sign up</ Link>  or{' '}
+                  < Link to={'/signin'} style={{ textDecoration: 'none' ,color:'white',display:"inline-block"}}>Connect</ Link>
+                       
              
               
                     </p>

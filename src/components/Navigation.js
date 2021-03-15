@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const Nav=styled.nav`
 position:relative;
-color:white;
+ 
 z-index:1;
     padding: 1em;
     background: transparent;
@@ -33,7 +33,13 @@ z-index:1;
     font-family:'Montserrat', sans-serif;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    text-shadow: 1px 1px 7px white;
+    font-weight:500;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)
     border-radius:20px;
 `;
 
