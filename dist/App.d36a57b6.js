@@ -65752,9 +65752,7 @@ var _client = require("@apollo/client");
 
 var _NoteForm = _interopRequireDefault(require("../components/NoteForm"));
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _templateObject, _templateObject2;
+var _templateObject;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -65776,18 +65774,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var P = _styledComponents.default.p(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    color:red;\n\n"])));
-
-var NEW_NOTE = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nmutation newNote($content: String!){\n    newNote(content: $content){\n        id\n        content\n        createdAt\n        favoriteCount\n        favoritedBy{\n            id\n            username            \n        }author{\n            username\n            id\n        }\n    }\n}\n"])));
+// our new note query
+var NEW_NOTE = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nmutation newNote($content: String!) {\nnewNote(content: $content) {\nid\ncontent\ncreatedAt\nfavoriteCount\nfavoritedBy {\nid\nusername\n}\nauthor {\nusername\nid\n}\n}\n}\n"])));
 
 var NewNote = function NewNote(props) {
   (0, _react.useEffect)(function () {
-    document.title = "New Note - EverNote";
+    // update the document title
+    document.title = 'New Note — Notedly';
   });
 
   var _useMutation = (0, _client.useMutation)(NEW_NOTE, {
     onCompleted: function onCompleted(data) {
-      props.history.push("note/".concat(data.NewNote.id));
+      // when complete, redirect the user to the note page
+      props.history.push("note/".concat(data.newNote.id));
     }
   }),
       _useMutation2 = _slicedToArray(_useMutation, 2),
@@ -65796,14 +65795,14 @@ var NewNote = function NewNote(props) {
       loading = _useMutation2$.loading,
       error = _useMutation2$.error;
 
-  return _react.default.createElement(_react.default.Fragment, null, loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement("p", null, error.message), _react.default.createElement(_NoteForm.default, {
+  return _react.default.createElement(_react.default.Fragment, null, loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement("p", null, "Error saving the note"), _react.default.createElement(_NoteForm.default, {
     action: data
   }));
 };
 
 var _default = NewNote;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"pages/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js"}],"pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -67383,7 +67382,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1468" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1610" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
