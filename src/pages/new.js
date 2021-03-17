@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useMutation, gql } from '@apollo/client';
 import NoteForm from '../components/NoteForm';
+import { GET_NOTES } from '../gql/query';
 // our new note query
 const NEW_NOTE = gql`
 mutation newNote($content: String!) {
@@ -23,9 +24,10 @@ id
 const NewNote = props => {
 useEffect(() => {
 // update the document title
-document.title = 'New Note — Notedly';
+document.title = 'New Note';
 });
 const [data, { loading, error }] = useMutation(NEW_NOTE, {
+    refetchQueries: [{ query: GET_NOTES }],
 onCompleted: data => {
 // when complete, redirect the user to the note page
 props.history.push(`note/${data.newNote.id}`);

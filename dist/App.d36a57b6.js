@@ -65752,6 +65752,8 @@ var _client = require("@apollo/client");
 
 var _NoteForm = _interopRequireDefault(require("../components/NoteForm"));
 
+var _query = require("../gql/query");
+
 var _templateObject;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -65780,10 +65782,13 @@ var NEW_NOTE = (0, _client.gql)(_templateObject || (_templateObject = _taggedTem
 var NewNote = function NewNote(props) {
   (0, _react.useEffect)(function () {
     // update the document title
-    document.title = 'New Note — Notedly';
+    document.title = 'New Note';
   });
 
   var _useMutation = (0, _client.useMutation)(NEW_NOTE, {
+    refetchQueries: [{
+      query: _query.GET_NOTES
+    }],
     onCompleted: function onCompleted(data) {
       // when complete, redirect the user to the note page
       props.history.push("note/".concat(data.newNote.id));
@@ -65802,7 +65807,7 @@ var NewNote = function NewNote(props) {
 
 var _default = NewNote;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js"}],"pages/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js"}],"pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -67382,7 +67387,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1610" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "23290" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
