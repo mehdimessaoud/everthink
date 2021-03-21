@@ -89,8 +89,8 @@ const Header = props =>{
                   ):(
                     <p>
            
-                 < Link to={'/signup'} style={{ textDecoration: 'none', color:'white' ,display:"inline-block"}}>Sign up</ Link>  or{' '}
-                  < Link to={'/signin'} style={{ textDecoration: 'none' ,color:'white',display:"inline-block"}}>Connect</ Link>
+                 < Link to={'/signup'} style={{ textDecoration: 'none', color:'white' ,display:"inline-block"}}>Sign up</ Link>  |{' '}
+                  < Link to={'/signin'} style={{ textDecoration: 'none' ,color:'white',display:"inline-block"}}>Sign in</ Link>
                        
              
               

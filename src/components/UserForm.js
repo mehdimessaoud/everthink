@@ -57,7 +57,8 @@ const Form= styled.form`
 }
 input{
   ::placeholder{
-    color:white;
+    color:black;
+
   }
   outline:none;
     position:center;
@@ -79,7 +80,7 @@ input{
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-      border-radius:5000px;
+      border-radius:10px;
 }
 
 a {

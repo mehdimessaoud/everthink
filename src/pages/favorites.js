@@ -2,7 +2,7 @@ import React,{useEffect} from 'react';
 
 const Favorites=()=>{
 useEffect(()=>{
-    document.title= 'Favorites - Notedly'
+    document.title= 'Favorites'
 })
 
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ButtonAsLink= styled.button`
     background: none;
-    
+    background-color: black;
     color: white;
     border: none;
     padding: 0;

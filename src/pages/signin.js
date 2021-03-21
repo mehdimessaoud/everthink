@@ -9,7 +9,7 @@ signIn(email: $email, password: $password)
 const SignIn = props => {
 useEffect(() => {
 // update the document title
-document.title = 'Sign In — Notedly';
+document.title = 'Sign In';
 });
 const client = useApolloClient();
 const [signIn, { loading, error }] = useMutation(SIGNIN_USER, {

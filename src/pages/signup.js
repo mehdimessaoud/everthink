@@ -37,7 +37,7 @@ const client= useApolloClient();
 
     useEffect(()=>{
         //update the title 
-        document.title= 'Sign Up - Notedly';
+        document.title= 'Sign Up';
     
     });
 

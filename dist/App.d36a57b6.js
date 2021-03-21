@@ -50316,7 +50316,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var ButtonAsLink = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background: none;\n    \n    color: white;\n    border: none;\n    padding: 0;\n    font: inherit;\n    text-decoration: none;\n    cursor: pointer;\n    :hover,\n    :active{\n        color: #004499;\n    }\n"])));
+var ButtonAsLink = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    background: none;\n    background-color: black;\n    color: white;\n    border: none;\n    padding: 0;\n    font: inherit;\n    text-decoration: none;\n    cursor: pointer;\n    :hover,\n    :active{\n        color: #004499;\n    }\n"])));
 
 var _default = ButtonAsLink;
 exports.default = _default;
@@ -50336,7 +50336,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Button = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\ndisplay: inline-block;\nfont-weight: 500;\nfont-family:'Montserrat', sans-serif;\ntext-shadow: 0px 0px 4px white;\nbox-shadow: 0px 0px 4px #0077cc;\npadding: 10px;\nborder: none;\nborder-radius: 5px;\n \n \ncolor: #fff;\nopacity: 0.7;\nfont-size: 1.4rem;\n \ntext-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n\nbackground-color: #0077cc;\ncursor: pointer;\n:hover {\nopacity: 0.8;\n}\n:active {\nbackground-color: #005fa3;\n}\n\n"])));
+var Button = _styledComponents.default.button(_templateObject || (_templateObject = _taggedTemplateLiteral(["\ndisplay: inline-block;\nfont-weight: 500;\nfont-family:'Montserrat', sans-serif;\ntext-shadow: 0px 0px 4px white;\nbox-shadow: 0px 0px 4px #0077cc;\npadding: 10px;\nborder: none;\nborder-radius: 5px;\n \n \ncolor: black;\nopacity: 0.7;\nfont-size: 1.4rem;\n \ntext-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n\nbackground-color: blue;\ncursor: pointer;\n:hover {\nopacity: 0.8;\n}\n:active {\nbackground-color: #005fa3;\n}\n\n"])));
 
 var _default = Button;
 exports.default = _default;
@@ -50403,14 +50403,14 @@ var Header = function Header(props) {
       color: 'white',
       display: "inline-block"
     }
-  }, "Sign up"), "  or", ' ', _react.default.createElement(_reactRouterDom.Link, {
+  }, "Sign up"), "  |", ' ', _react.default.createElement(_reactRouterDom.Link, {
     to: '/signin',
     style: {
       textDecoration: 'none',
       color: 'white',
       display: "inline-block"
     }
-  }, "Connect"))));
+  }, "Sign in"))));
 };
 
 var _default = (0, _reactRouterDom.withRouter)(Header);
@@ -65288,22 +65288,24 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.GET_MY_NOTES = exports.IS_LOGGED_IN = exports.GET_NOTE = exports.GET_NOTES = void 0;
+exports.GET_ME = exports.GET_MY_NOTES = exports.IS_LOGGED_IN = exports.GET_NOTE = exports.GET_NOTES = void 0;
 
 var _client = require("@apollo/client");
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var GET_MY_NOTES = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nquery me{\n    me{\n        id\n        username\n        notes{\n            notes{\n                id\n                createdAt\n                content\n                favoriteCount\n                author{\n                    username\n                    id\n                    avatar\n                }\n            }\n        }\n    }\n}\n"])));
+var GET_MY_NOTES = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nquery me {\n        me {\n            id\n            username\n            notes {\n                id\n                createdAt\n                content\n                favoriteCount\n                    author {\n                        username\n                        id\n                        avatar\n                    }\n                }\n            }\n    }\n"])));
 exports.GET_MY_NOTES = GET_MY_NOTES;
-var GET_NOTE = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    query note($id: ID!){\n        note(id: $id){\n            id\n            createdAt\n            content\n            favoriteCount\n            author{\n                username\n                id\n                avatar\n            }\n        }\n    }\n\n"])));
+var GET_ME = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nquery me {\nme {\nid\nfavorites {\nid\n}\n}\n}\n"])));
+exports.GET_ME = GET_ME;
+var GET_NOTE = (0, _client.gql)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    query note($id: ID!){\n        note(id: $id){\n            id\n            createdAt\n            content\n            favoriteCount\n            author{\n                username\n                id\n                avatar\n            }\n        }\n    }\n\n"])));
 exports.GET_NOTE = GET_NOTE;
-var NEW_NOTE = (0, _client.gql)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\nmutation newNote($content: String!){\n    newNote(content: $content){\n        id\n        content\n        createdAt\n        favoriteCount\n        favoritedBy{\n            id\n            username            \n        }author{\n            username\n            id\n        }\n    }\n}\n"])));
-var GET_NOTES = (0, _client.gql)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\nquery noteFeed($cursor: String){\n    noteFeed(cursor:  $cursor){\n        cursor\n        hasNextPage\n        notes{\n            id\n            createdAt\n            content\n            favoriteCount\n            author{\n                username\n                id\n                avatar            \n            }\n        }\n    }\n}\n"])));
+var NEW_NOTE = (0, _client.gql)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\nmutation newNote($content: String!){\n    newNote(content: $content){\n        id\n        content\n        createdAt\n        favoriteCount\n        favoritedBy{\n            id\n            username            \n        }author{\n            username\n            id\n        }\n    }\n}\n"])));
+var GET_NOTES = (0, _client.gql)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\nquery noteFeed($cursor: String){\n    noteFeed(cursor:  $cursor){\n        cursor\n        hasNextPage\n        notes{\n            id\n            createdAt\n            content\n            favoriteCount\n            author{\n                username\n                id\n                avatar            \n            }\n        }\n    }\n}\n"])));
 exports.GET_NOTES = GET_NOTES;
-var IS_LOGGED_IN = (0, _client.gql)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n{\n    isLoggedIn @client\n}\n"])));
+var IS_LOGGED_IN = (0, _client.gql)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["    \n{\n    isLoggedIn @client\n}\n"])));
 exports.IS_LOGGED_IN = IS_LOGGED_IN;
 },{"@apollo/client":"../node_modules/@apollo/client/index.js"}],"pages/mynotes.js":[function(require,module,exports) {
 "use strict";
@@ -65330,9 +65332,27 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var MyNotes = function MyNotes() {
   (0, _react.useEffect)(function () {
     //update the document title
-    document.title = 'My notes - notedly';
+    document.title = 'My notes';
   });
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Notedly"), _react.default.createElement("p", null, "These are my notes"));
+
+  var _useQuery = (0, _client.useQuery)(_query.GET_MY_NOTES),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data; //if the data is large and taking too much to load our app will display a loading message
+
+
+  if (loading) return 'Loading...'; //if there is an error our app will display an error message
+
+  if (error) return "Error! ".concat(error.message); //if the query is successful and there are notes, return the feed of notes
+  //else if the query is successful and there aren't notes, display a message
+
+  if (data.me.notes.length !== 0) {
+    return _react.default.createElement(_NoteFeed.default, {
+      notes: data.me.notes
+    });
+  } else {
+    return _react.default.createElement("p", null, "No notes yet");
+  }
 };
 
 var _default = MyNotes;
@@ -65353,7 +65373,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var Favorites = function Favorites() {
   (0, _react.useEffect)(function () {
-    document.title = 'Favorites - Notedly';
+    document.title = 'Favorites';
   });
   return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Notedly"), _react.default.createElement("p", null, "These are my favorites"));
 };
@@ -65447,7 +65467,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  \npadding: 1em;\nmargin: 0 auto;\n top:-10px;\n left: -15px;\nbackground: rgba(255,255,255,0.06);\npadding: 3em;\nheight:95%;\nborder-radius: 20px;\nborder-left:1px solid rgba( 255, 255, 255, 0.3 );\nborder-top:1px solid rgba( 255, 255, 255, 0.3 );\n-webkit-backdrop-filter:blur(10px);\nbackdrop-filter:blur(5px);\nbox-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);\ntext-align:center;\nposition:relative;\n-webkit-transform: all 0.2s ease-in-out;\n\nh2{\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n}\n"])));
 
-var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n \n \n label{\n    position:fixed;\n    float: left;\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n }\n\n ::placeholder{\n  font-family: 'Montserrat', sans-serif;\n  font-weight: 400;\n  color: #fff;\n  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);\n}\ninput{\n  ::placeholder{\n    color:white;\n  }\n  outline:none;\n    position:center;\n    display: block;\n    line-height: 2em;\n    background: transparent;\n    width: 200px;\n    padding: 1em;\n    margin-bottom:2em;\n    border:none;\n     border-left:1px solid rgba( 255, 255, 255, 0.3 );\n      border-top:1px solid rgba( 255, 255, 255, 0.3 );\n      -webkit-backdrop-filter:blur(5px);\n      backdrop-filter:blur(15px);\n      box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n      color: #fff;\n      font-weight: 500;\n      font-family:'Montserrat', sans-serif;\n      -webkit-transition: all 0.2s ease-in-out;\n      transition: all 0.2s ease-in-out;\n      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n      border-radius:5000px;\n}\n\na {\n    text-decoration: none;\n    color: #ddd;\n    font-size: 12px;\n  \n  }\n\n  a:hover{\n    text-shadow: 2px 2px 6px #00000040;\n  \n  }\n  a:active{\n    text-shadow:none\n  }\np{\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n} \n\n\n"])));
+var Form = _styledComponents.default.form(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n \n \n label{\n    position:fixed;\n    float: left;\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n }\n\n ::placeholder{\n  font-family: 'Montserrat', sans-serif;\n  font-weight: 400;\n  color: #fff;\n  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);\n}\ninput{\n  ::placeholder{\n    color:black;\n\n  }\n  outline:none;\n    position:center;\n    display: block;\n    line-height: 2em;\n    background: transparent;\n    width: 200px;\n    padding: 1em;\n    margin-bottom:2em;\n    border:none;\n     border-left:1px solid rgba( 255, 255, 255, 0.3 );\n      border-top:1px solid rgba( 255, 255, 255, 0.3 );\n      -webkit-backdrop-filter:blur(5px);\n      backdrop-filter:blur(15px);\n      box-shadow: 4px 4px 60px  rgba(0,0,0,0.2);\n      color: #fff;\n      font-weight: 500;\n      font-family:'Montserrat', sans-serif;\n      -webkit-transition: all 0.2s ease-in-out;\n      transition: all 0.2s ease-in-out;\n      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);\n      border-radius:10px;\n}\n\na {\n    text-decoration: none;\n    color: #ddd;\n    font-size: 12px;\n  \n  }\n\n  a:hover{\n    text-shadow: 2px 2px 6px #00000040;\n  \n  }\n  a:active{\n    text-shadow:none\n  }\np{\n    font-weight:500;\n    color: #fff;\n    opacity: 0.7;\n    font-size: 1.4rem;\n    margin-top: 0;\n    margin-bottom: 60px;\n    text-shadow: 2px 2px 4px rgba(0,0,0,0.2)\n} \n\n\n"])));
 
 var UserForm = function UserForm(props) {
   var _useState = (0, _react.useState)(),
@@ -65574,7 +65594,7 @@ var SignUp = function SignUp(props) {
 
   (0, _react.useEffect)(function () {
     //update the title 
-    document.title = 'Sign Up - Notedly';
+    document.title = 'Sign Up';
   });
   return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_UserForm.default, {
     action: signUp,
@@ -65625,7 +65645,7 @@ var SIGNIN_USER = (0, _client.gql)(_templateObject || (_templateObject = _tagged
 var SignIn = function SignIn(props) {
   (0, _react.useEffect)(function () {
     // update the document title
-    document.title = 'Sign In — Notedly';
+    document.title = 'Sign In';
   });
   var client = (0, _client.useApolloClient)();
 
@@ -65807,7 +65827,77 @@ var NewNote = function NewNote(props) {
 
 var _default = NewNote;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js"}],"pages/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js"}],"gql/mutation.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.EDIT_NOTE = void 0;
+
+var _client = require("@apollo/client");
+
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var EDIT_NOTE = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nmutation updateNote($id: ID! , $content: String!){\n    updataNote(id:$id,content: $content){\n        id\n        content\n        createdAt\n        favoriteCount\n        favoritedBy{\n            id\n            username\n        }\n        author{\n            username\n            id\n        }\n\n    }\n}\n\n"])));
+exports.EDIT_NOTE = EDIT_NOTE;
+},{"@apollo/client":"../node_modules/@apollo/client/index.js"}],"pages/edit.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _client = require("@apollo/client");
+
+var _NoteForm = _interopRequireDefault(require("../components/NoteForm"));
+
+var _query = require("../gql/query");
+
+var _mutation = require("../gql/mutation");
+
+var _Note = _interopRequireDefault(require("../components/Note"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import the Note component
+//import the GET_NOTE query
+var EditNote = function EditNote(props) {
+  //Store the id found in the url as a variable
+  var id = props.match.params.id; //define our note query
+
+  var _useQuery = (0, _client.useQuery)(_query.GET_NOTE, {
+    variables: {
+      id: id
+    }
+  }),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data;
+
+  var _useQuery2 = (0, _client.useQuery)(_query.GET_ME),
+      userdata = _useQuery2.data;
+
+  if (loading) return 'Loading...';
+  if (error) return "Error! ".concat(error.message);
+
+  if (userdata.me.id !== data.note.author.id) {
+    return _react.default.createElement("p", null, "You do not have access to edit this note");
+  }
+
+  return _react.default.createElement(_NoteForm.default, {
+    content: data.note.content
+  });
+};
+
+var _default = EditNote;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js","../gql/mutation":"gql/mutation.js","../components/Note":"components/Note.js"}],"pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -65835,6 +65925,8 @@ var _signin = _interopRequireDefault(require("./signin"));
 
 var _new = _interopRequireDefault(require("./new"));
 
+var _edit = _interopRequireDefault(require("./edit"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Pages = function Pages() {
@@ -65860,12 +65952,15 @@ var Pages = function Pages() {
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/new",
     component: _new.default
+  }), _react.default.createElement(_reactRouterDom.Route, {
+    path: "/edit/:id",
+    component: _edit.default
   })));
 };
 
 var _default = Pages;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../components/Layout":"components/Layout.js","./home":"pages/home.js","./mynotes":"pages/mynotes.js","./favorites":"pages/favorites.js","./note":"pages/note.js","./signup":"pages/signup.js","./signin":"pages/signin.js","./new":"pages/new.js"}],"../node_modules/zen-observable-ts/lib/bundle.esm.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../components/Layout":"components/Layout.js","./home":"pages/home.js","./mynotes":"pages/mynotes.js","./favorites":"pages/favorites.js","./note":"pages/note.js","./signup":"pages/signup.js","./signin":"pages/signin.js","./new":"pages/new.js","./edit":"pages/edit.js"}],"../node_modules/zen-observable-ts/lib/bundle.esm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -67387,7 +67482,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "23290" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "3921" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

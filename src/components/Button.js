@@ -10,13 +10,13 @@ border: none;
 border-radius: 5px;
  
  
-color: #fff;
+color: black;
 opacity: 0.7;
 font-size: 1.4rem;
  
 text-shadow: 2px 2px 4px rgba(0,0,0,0.2)
 
-background-color: #0077cc;
+background-color: blue;
 cursor: pointer;
 :hover {
 opacity: 0.8;

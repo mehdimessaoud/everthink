@@ -9,6 +9,7 @@ import NotePage from './note';
 import SignUp from './signup';
 import SignIn from './signin';
 import NewNote from './new';
+import EditNote from './edit';
 
 
 const Pages=()=>{
@@ -22,6 +23,7 @@ const Pages=()=>{
             <Route path="/favorites" component={Favorites} />
             <Route path="/note/:id" component={NotePage}/>
             <Route path="/new" component={NewNote}/>
+            <Route path="/edit/:id" component={EditNote}/>
             </Layout>
            
         </Router>
