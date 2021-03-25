@@ -65298,7 +65298,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var GET_MY_NOTES = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nquery me {\n        me {\n            id\n            username\n            notes {\n                id\n                createdAt\n                content\n                favoriteCount\n                    author {\n                        username\n                        id\n                        avatar\n                    }\n                }\n            }\n    }\n"])));
 exports.GET_MY_NOTES = GET_MY_NOTES;
-var GET_ME = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nquery me {\nme {\nid\nfavorites {\nid\n}\n}\n}\n"])));
+var GET_ME = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nquery me{\nme{\nid\nfavorites {\nid\n}\n}\n}\n"])));
 exports.GET_ME = GET_ME;
 var GET_NOTE = (0, _client.gql)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    query note($id: ID!){\n        note(id: $id){\n            id\n            createdAt\n            content\n            favoriteCount\n            author{\n                username\n                id\n                avatar\n            }\n        }\n    }\n\n"])));
 exports.GET_NOTE = GET_NOTE;
@@ -65827,23 +65827,7 @@ var NewNote = function NewNote(props) {
 
 var _default = NewNote;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js"}],"gql/mutation.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.EDIT_NOTE = void 0;
-
-var _client = require("@apollo/client");
-
-var _templateObject;
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var EDIT_NOTE = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nmutation updateNote($id: ID! , $content: String!){\n    updataNote(id:$id,content: $content){\n        id\n        content\n        createdAt\n        favoriteCount\n        favoritedBy{\n            id\n            username\n        }\n        author{\n            username\n            id\n        }\n\n    }\n}\n\n"])));
-exports.EDIT_NOTE = EDIT_NOTE;
-},{"@apollo/client":"../node_modules/@apollo/client/index.js"}],"pages/edit.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js"}],"pages/edit.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -65859,17 +65843,13 @@ var _NoteForm = _interopRequireDefault(require("../components/NoteForm"));
 
 var _query = require("../gql/query");
 
-var _mutation = require("../gql/mutation");
-
-var _Note = _interopRequireDefault(require("../components/Note"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import the Note component
-//import the GET_NOTE query
+// import the GET_NOTE query
 var EditNote = function EditNote(props) {
-  //Store the id found in the url as a variable
-  var id = props.match.params.id; //define our note query
+  // store the id found in the url as a variable
+  var id = props.match.params.id; // define our note query
 
   var _useQuery = (0, _client.useQuery)(_query.GET_NOTE, {
     variables: {
@@ -65881,23 +65861,27 @@ var EditNote = function EditNote(props) {
       data = _useQuery.data;
 
   var _useQuery2 = (0, _client.useQuery)(_query.GET_ME),
-      userdata = _useQuery2.data;
+      error1 = _useQuery2.error1,
+      userdata = _useQuery2.data; // if the data is loading, display a loading message
 
-  if (loading) return 'Loading...';
-  if (error) return "Error! ".concat(error.message);
+
+  if (loading) return 'Loading...'; // if there is an error fetching the data, display an error message
+
+  if (error) return _react.default.createElement("p", null, "Error! Note not found");
+  if (error1) return _react.default.createElement("p", null, error.message, " "); // if successful, pass the data to the note component
 
   if (userdata.me.id !== data.note.author.id) {
-    return _react.default.createElement("p", null, "You do not have access to edit this note");
+    return _react.default.createElement("p", null, " You cannot edit this note ");
   }
 
   return _react.default.createElement(_NoteForm.default, {
-    content: data.note.content
+    note: data.note.content
   });
 };
 
 var _default = EditNote;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js","../gql/mutation":"gql/mutation.js","../components/Note":"components/Note.js"}],"pages/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js"}],"pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -67482,7 +67466,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "3921" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "3771" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -21,8 +21,8 @@ query me {
 `;
 
 const GET_ME = gql`
-query me {
-me {
+query me{
+me{
 id
 favorites {
 id
